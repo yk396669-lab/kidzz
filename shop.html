@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kids Shopping Wonderland</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff;
+        }
+        header {
+            background-color: #ff69b4;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: #ff69b4;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+        .carousel {
+            width: 80%;
+            overflow: hidden;
+            position: relative;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            margin-left: 150px;
+        }
+        .carousel-images {
+            display: flex;
+            width: 300%;
+            animation: slide 20s infinite;
+        }
+        .carousel-images img {
+            width: 100%;
+            height: auto;
+            border-right: 2px solid #ccc;
+        }
+        @keyframes slide {
+            0% { transform: translateX(0); }
+            33% { transform: translateX(-100%); }
+            66% { transform: translateX(-200%); }
+            100% { transform: translateX(0); }
+        }
+       
+       
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .product {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 10px;
+            padding: 10px;
+            text-align: center;
+            width: calc(33% - 20px);
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Kids Shopping Wonderland!</h1>
+    </header>
+    <nav>
+
+        <a href="#">Home</a>
+        <a href="toys.html">Toys</a>
+        <a href="clothes.html">Clothes</a>
+        <a href="bok.html">Books</a>
+    </nav>
+    <div class="carousel">
+        <div class="carousel-images">
+            <img src="im.jpg" alt="Image 1">
+            <img src="im.jpg" alt="Image 2">
+            <img src="im.jpg" alt="Image 3">
+            <img src="im.jpg" alt="Image 1">
+            <img src="im.jpg" alt="Image 2">
+            <img src="im.jpg" alt="Image 3">
+        </div>
+    </div>
+       
+        
+      
+        <div class="arrow right-arrow" onclick="nextImage()">&#8250;</div>
+    </div>
+    <div class="products">
+        <div class="product">
+            <img src="./Screenshot 2024-10-09 163631.png" alt="Product 1" width="200" height="200">
+            <h3>caps shield</h3>
+            <p>$200</p>
+            <a href="payment.html"><button style="background-color:aquamarine;">BUY</button></a>
+        </div>
+        <div class="product">
+            <img src="./Screenshot 2024-10-09 163413.png" alt="Product 2" width="200" height="200">
+            <h3>mushrooms</h3>
+            <p>$150</p>
+            <a href="payment.html"><button style="background-color:aquamarine;">BUY</button></a>
+        </div>
+        <div class="product">
+            <img src="./Screenshot 2024-10-09 160733.png" alt="Product 3" width="200" height="200">
+            <h3>hide and seek</h3>
+            <p>$300</p>
+            <a href="payment.html"><button style="background-color:aquamarine;">BUY</button></a>
+        </div>
+    </div>
+    <center><a href="home2.html"><button style="background-color:burlywood; height:100px; width:200px; margin-top:80px; font-size:40px;">Go To Home</button></center>
+    <script>
+        let currentImageIndex = 0;
+        const images = document.querySelectorAll('.carousel img');
+
+        function showImage(index) {
+            images.forEach((img, idx) => {
+                img.style.transform = `translateX(${10 * (idx - index)}%)`;
+            });
+        }
+
+        function prevImage() {
+            currentImageIndex = (currentImageIndex > 1) ? currentImageIndex - 1 : images.length - 1;
+            showImage(currentImageIndex);
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex < images.length - 1) ? currentImageIndex + 1 : 0;
+            showImage(currentImageIndex);
+        }
+
+        showImage(currentImageIndex);
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<html>
+<head>
+    <title>Login Form</title>
+    <style>
+        /* Basic styling for the form */
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url(45455.jpg);
+            background-repeat: no-repeat;
+           background-size:100%,100% ;
+           
+            
+        }
+        .container {
+            max-width: 400px;
+           margin-top:200px;
+          margin-left: 550px;
+            opacity: 0.9;
+            padding: 20px;
+            background-color: #979698ee;                      
+            
+        }
+        input[type="email"], input[type="password"] {
+            width: 100%;
+            padding: 15px;
+            margin: 8px 0;
+            
+            border: 1px rgb(240,240,240);
+            border-radius: 3px;
+        }
+        button {
+            margin-top: 5px;
+            width: 100%;
+            padding: 10px;
+            background-color: #095fa1;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .Forgot { 
+            margin-left: 192px;
+        }
+        button:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <h2>Login</h2>
+        <form action="home2.html">
+           <label for="Mail_ID"> <b>Mail ID</b></label>
+            <input type="email" placeholder="Enter Gmail ID" name="gmailId" required>
+            <label for="Password"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="password" required>
+            <a href="#"><font color="black">REGISTER</a>
+            <a class="Forgot" href="#" ><font color="black">Forgot password</a>
+           <button type="submit">Login</button>
+        </form>
+        
+    </div>
+</body>
+</html>
